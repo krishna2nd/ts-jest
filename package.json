@@ -16,7 +16,13 @@
   },
   "jest": {
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js",
+      "\\.js$": [
+        "babel-jest",
+        {
+          "rootMode": "upward"
+        }
+      ]
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
@@ -26,6 +32,7 @@
     ]
   },
   "dependencies": {
-    "@types/mocha": "^7.0.1"
+    "@types/mocha": "^7.0.1",
+    "babel-jest": "^25.1.0"
   }
 }
